@@ -39,6 +39,13 @@ mongoose.connect(process.env.MONGO_URL, connectOptions)
 
 // Routes
 const activitiesRoutes = require('./routes/activitiesRoutes');
+const goalsRoutes = require('./routes/goalsRoutes');
+const achievementsRoutes = require('./routes/achievementsRoutes');
+
+// Use routes
+
+app.use('/api/goals', goalsRoutes);
+app.use('/api/achievements', achievementsRoutes);
 app.use('/api/activities', activitiesRoutes);
 
 // Error handling middleware
